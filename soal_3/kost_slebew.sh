@@ -95,7 +95,7 @@ add_tenant() {
 	else
 		awk -v a="$name" -v b="$num" -v c="$cost" -v d="$status" 'BEGIN {OFS=","} 1; END {print a,b,c,d}' data/penghuni.csv > data/penghuni.csv.temp
 		mv data/penghuni.csv.temp data/penghuni.csv
-		echo "Penghuni" $name "berhasil ditambahkan ke kamar" $num "dengan status " $status
+		echo "Penghuni $name berhasil ditambahkan ke kamar $num dengan status $status"
 	fi
 }
 
@@ -105,7 +105,14 @@ remove_tenant() {
            HAPUS PENGHUNI
 ===================================="
 	read -p "Nama Penghuni  :" name
-
+	# Moves into trash
+	data=$(awk -v a="$name" -v b="$(date +%F)" 'BEGIN {OFS=","; FS=","} $1 == a {print $1, $2, $3, b}' data/penghuni.csv)
+	awk -v a="$data" 'BEGIN {OFS=","} 1; END {print a}' sampah/history_hapus.csv > sampah/history_hapus.csv.temp
+	mv sampah/history_hapus.csv.temp sampah/history_hapus.csv
+	# Deletes data
+	awk -v a=$"$name" 'BEGIN {FS=","} $1 != a' data/penghuni.csv > data/penghuni.csv.temp
+	mv data/penghuni.csv.temp data/penghuni.csv
+	echo "Data Penghuni $name berhasil diarsipkan ke sampah/history_hapus.csv dan dihapus dari database" #FIX THIS LATER SOMEHOW
 }
 
 
@@ -113,6 +120,4 @@ remove_tenant() {
 printf "%s" "$banner"
 while true
 do
-	main_menu
-	add_tenant
 done	
