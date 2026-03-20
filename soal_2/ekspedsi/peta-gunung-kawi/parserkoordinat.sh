@@ -13,11 +13,11 @@ match ($0, /"site_name": "([^"]+)"/, val) {
   site[b] = val[1]
   b++
 }
-match ($0, /"latitude": ([^*,]+),/, val) {
+match ($0, /"latitude": ([^,]+),/, val) {
   lat[c] = val[1]
   c++
 }
-match ($0, /"longitude": ([^*,]+),/, val) {
+match ($0, /"longitude": ([^,]+),/, val) {
   long[d] = val[1]
   d++
 }
