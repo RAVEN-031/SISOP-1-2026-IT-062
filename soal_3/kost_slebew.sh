@@ -120,4 +120,5 @@ remove_tenant() {
 printf "%s" "$banner"
 while true
 do
+	main_menu
 done	
