@@ -97,9 +97,17 @@ add_tenant() {
 		mv data/penghuni.csv.temp data/penghuni.csv
 		echo "Penghuni" $name "berhasil ditambahkan ke kamar" $num "dengan status " $status
 	fi
+}
 
+remove_tenant() {
+	echo "
+====================================
+           HAPUS PENGHUNI
+===================================="
+	read -p "Nama Penghuni  :" name
 
 }
+
 
 
 printf "%s" "$banner"
