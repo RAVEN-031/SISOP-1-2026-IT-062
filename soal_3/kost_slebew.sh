@@ -37,9 +37,6 @@ banner="
 Mizuki Akiyama!
 "
 
-invalid() {
-	echo "Input Salah!"
-}
 main_menu() {
 	echo "
 	
@@ -115,10 +112,34 @@ remove_tenant() {
 	echo "Data Penghuni $name berhasil diarsipkan ke sampah/history_hapus.csv dan dihapus dari database" #FIX THIS LATER SOMEHOW
 }
 
+show_tenant() {
+	awk -F',' '
+	BEGIN {
+		printf "=====================================================\n"
+		printf "              DAFTAR PENGUNI KOST\n"
+		printf "=====================================================\n"
+		printf "No | %-10s | %-5s | %-12s | %-10s\n", "Nama", "Kamar", "Harga", "Status"
+		printf "-----------------------------------------------------\n"
+	}
+	NR > 1 {
+		count++
+		printf "%-2d | %-10s | %-5s | %-12s | %-10s\n", count, $1, $2, $3, $4
+		if ($4 == "Aktif") aktif++
+		else menunggak++
+	}
+	END {
+		printf "-----------------------------------------------------\n"
+		printf "Total: %d | Aktif: %d | Menunggak: %d\n", count, aktif, menunggak
+		printf "=====================================================\n"
+	}
+	' data/penghuni.csv
+
+}
 
 
 printf "%s" "$banner"
 while true
 do
 	main_menu
+	show_tenant
 done	
