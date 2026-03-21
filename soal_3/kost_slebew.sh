@@ -136,10 +136,31 @@ show_tenant() {
 
 }
 
+update_tenant() {
+	echo "
+====================================
+           UPDATE STATUS
+===================================="
+	read -p "Masukkan nama penghuni: " name
+	read -p "Masukkan status baru: " status
+	if [[ $status != "Aktif" && $status != "Menunggak" ]]
+	then
+		echo "Status invalid"
+		return 0
+	elif [[ $(awk -v a="$name" -F',' '$1 == a {print 1; exit}' data/penghuni.csv) != "1" ]]
+	then
+		echo "Nama penghuni tidak ditemukan"
+		return 0
+	fi
+	awk -v a="$name" -v b="$status" 'BEGIN {FS=",";OFS=","} $1 != a; $1 == a {print $1,$2,$3,b}' data/penghuni.csv > data/penghuni.csv.temp	
+	mv data/pennghuni.csv.temp data/penghuni.csv
+	echo "Status $name berhasil diubah menjadi $status"
+}
 
 printf "%s" "$banner"
 while true
 do
+	#don't forget to add buffers
 	main_menu
-	show_tenant
+	update_tenant
 done	
