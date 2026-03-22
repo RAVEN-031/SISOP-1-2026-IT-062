@@ -164,8 +164,20 @@ report_tenant() {
 ====================================
 "
 awk 'BEGIN {FS=",";aktif=0;menunggak=0;count=0}
-NR > 1 {if ($4 == "Aktif") {aktif+=$3; count++} if ($4 == "Menunggak") {menunggak+=$3; count++}
-END {print }'
+NR > 1 {
+if ($4 == "Aktif") {aktif+=$3; count++}
+if ($4 == "Menunggak") {menunggak+=$3; count++; arr[$1]++; flag="1"}
+}
+END {
+printf "Total Pemasukan (Aktif)   : Rp. %d\n", aktif
+printf "Total Tunggakan           : Rp. %d\n", menunggak
+printf "Jumlah Kamar Terisi       : %d\n", count
+printf "------------------------------------\nDaftar penghuni menunggak:\n"
+if (flag != "1") {print "Tidak ada tunggakan"}
+else{
+for (i in arr){print i}}
+print "===================================="
+}' data/penghuni.csv
 }
 
 printf "%s" "$banner"
