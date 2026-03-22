@@ -123,7 +123,7 @@ show_tenant() {
 	}
 	NR > 1 {
 		count++
-		printf "%-2d | %-10s | %-5s | %-12s | %-10s\n", count, $1, $2, $3, $4
+		printf "%-2d | %-10s | %-5s | Rp. %-12s | %-10s\n", count, $1, $2, $3, $4
 		if ($4 == "Aktif") aktif++
 		else menunggak++
 	}
@@ -157,10 +157,21 @@ update_tenant() {
 	echo "Status $name berhasil diubah menjadi $status"
 }
 
+report_tenant() {
+	echo "
+====================================
+          Laporan Keuangan
+====================================
+"
+awk 'BEGIN {FS=",";aktif=0;menunggak=0;count=0}
+NR > 1 {if ($4 == "Aktif") {aktif+=$3; count++} if ($4 == "Menunggak") {menunggak+=$3; count++}
+END {print }'
+}
+
 printf "%s" "$banner"
 while true
 do
 	#don't forget to add buffers
 	main_menu
-	update_tenant
+	report_tenant
 done	
