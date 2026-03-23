@@ -1,0 +1,10 @@
+====================================
+          Laporan Keuangan
+====================================
+Total Pemasukan (Aktif)   : Rp. 320000
+Total Tunggakan           : Rp. 20
+Jumlah Kamar Terisi       : 3
+------------------------------------
+Daftar penghuni menunggak:
+M
+====================================

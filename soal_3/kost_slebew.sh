@@ -158,12 +158,13 @@ update_tenant() {
 }
 
 report_tenant() {
-	echo "
-====================================
-          Laporan Keuangan
-====================================
-"
-awk 'BEGIN {FS=",";aktif=0;menunggak=0;count=0}
+awk 'BEGIN {
+FS=",";aktif=0;menunggak=0;count=0
+print "===================================="
+print "          Laporan Keuangan"
+print "===================================="
+}
+
 NR > 1 {
 if ($4 == "Aktif") {aktif+=$3; count++}
 if ($4 == "Menunggak") {menunggak+=$3; count++; arr[$1]++; flag="1"}
@@ -177,7 +178,56 @@ if (flag != "1") {print "Tidak ada tunggakan"}
 else{
 for (i in arr){print i}}
 print "===================================="
-}' data/penghuni.csv
+}' data/penghuni.csv > rekap/laporan_bulanan.txt
+cat rekap/laporan_bulanan.txt
+}
+
+reminder_shi() {
+	while true
+	do
+		echo "
+====================================
+              MENU CRON
+====================================
+1. Lihat Cron Job aktif
+2. Daftar Cron Job pengingat
+3. Hapus  Cron Job pengingat
+4. Kembali
+===================================="	
+		read -p ">> " input
+		if [[ $input == "1" ]]
+		then
+			out=$(crontab -l)
+			if [[ $? == 1 ]]
+			then
+				echo "Tidak ada pengingat aktif"
+			else
+				echo "--Daftar Cron Job--"
+				echo "$out"
+			fi
+		elif [[ $input == "2" ]]
+		then
+			read -p "Masukkan Jam (0-23): " hour
+			read -p "Masukkan Menit (0-59): " mins
+			hour=$(($hour % 24))
+			mins=$(($mins % 60))
+			#I'm normalizing this cuz I AM NOT DEALING WITH ANOTHER INPUT SANITATION
+			echo "$mins $hour * * * $(pwd)/kost_slebew.sh --check-tagihan" > ./cron_temp
+			crontab ./cron_temp
+			rm ./cron_temp
+			echo "Cron Job pengingat berhasil ditambahkan"
+		elif [[ $input == "3" ]]
+		then 
+			crontab -r
+			echo "Cron Job pengingat terhapus"
+		elif [[ $input == "4" ]]
+		then
+			return 0
+		else
+			echo "Input salah"
+		fi
+				
+	done	
 }
 
 printf "%s" "$banner"
@@ -185,5 +235,5 @@ while true
 do
 	#don't forget to add buffers
 	main_menu
-	report_tenant
+	reminder_shi
 done	
