@@ -102,6 +102,13 @@ remove_tenant() {
            HAPUS PENGHUNI
 ===================================="
 	read -p "Nama Penghuni  :" name
+	# Checks if name exists
+	flag=$(awk -v a="name" 'BEGIN {FS=","} $1 == a {print 0;exit} END {print 1}' data/penghuni.csv)
+	if [[ $flag == 1 ]]
+	then
+		echo "Nama tidak ditemukan"
+		return 0
+	fi
 	# Moves into trash
 	data=$(awk -v a="$name" -v b="$(date +%F)" 'BEGIN {OFS=","; FS=","} $1 == a {print $1, $2, $3, b}' data/penghuni.csv)
 	awk -v a="$data" 'BEGIN {OFS=","} 1; END {print a}' sampah/history_hapus.csv > sampah/history_hapus.csv.temp
@@ -109,7 +116,7 @@ remove_tenant() {
 	# Deletes data
 	awk -v a=$"$name" 'BEGIN {FS=","} $1 != a' data/penghuni.csv > data/penghuni.csv.temp
 	mv data/penghuni.csv.temp data/penghuni.csv
-	echo "Data Penghuni $name berhasil diarsipkan ke sampah/history_hapus.csv dan dihapus dari database" #FIX THIS LATER SOMEHOW
+	echo "Data Penghuni $name berhasil diarsipkan ke sampah/history_hapus.csv dan dihapus dari database"
 }
 
 show_tenant() {
@@ -153,7 +160,7 @@ update_tenant() {
 		return 0
 	fi
 	awk -v a="$name" -v b="$status" 'BEGIN {FS=",";OFS=","} $1 != a; $1 == a {print $1,$2,$3,b}' data/penghuni.csv > data/penghuni.csv.temp	
-	mv data/pennghuni.csv.temp data/penghuni.csv
+	mv data/penghuni.csv.temp data/penghuni.csv
 	echo "Status $name berhasil diubah menjadi $status"
 }
 
@@ -197,7 +204,7 @@ reminder_shi() {
 		read -p ">> " input
 		if [[ $input == "1" ]]
 		then
-			out=$(crontab -l)
+			out=$(crontab -l 2>/dev/null)
 			if [[ $? == 1 ]]
 			then
 				echo "Tidak ada pengingat aktif"
@@ -230,10 +237,49 @@ reminder_shi() {
 	done	
 }
 
+if [[ $1 == "--check-tagihan" ]]
+then
+	dat=$(date +%F)
+	tim=$(date +%T)
+	awk -v a="$dat" -v b="$tim" '
+	BEGIN {FS=","}
+	$4 == "Menunggak" {printf "[%s %s] TAGIHAN: %s (%s) - Menunggak Rp. %s\n", a, b, $1, $2, $3}' data/penghuni.csv >> log/tagihan.log
+	exit 0
+fi
 printf "%s" "$banner"
 while true
 do
-	#don't forget to add buffers
 	main_menu
-	reminder_shi
+	if [[ $input == "1" ]]
+	then
+		add_tenant
+		read -p "Tekan Enter untuk melanjutkan"
+	elif [[ $input == "2" ]]
+	then
+		remove_tenant
+		read -p "Tekan Enter untuk melanjutkan"
+	elif [[ $input == "3" ]]
+	then
+		show_tenant
+		read -p "Tekan Enter untuk melanjutkan"
+	elif [[ $input == "4" ]]
+	then
+		update_tenant
+		read -p "Tekan Enter untuk melanjutkan"
+	elif [[ $input == "5" ]]
+	then
+		report_tenant
+		read -p "Tekan Enter untuk melanjutkan"
+	elif [[ $input == "6" ]]
+	then
+		reminder_shi
+		read -p "Tekan Enter untuk melanjutkan"
+	elif [[ $input == "7" ]]
+	then
+		break
+	else
+		echo "Input salah"
+		read -p "Tekan Enter untuk melanjutkan"
+	fi
+
 done	
