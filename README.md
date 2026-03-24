@@ -2,6 +2,10 @@
 
 ## Daftar Isi
 
+[Soal 1 - ARGO NGAWI JESGEJES](#soal-1---argo-ngawi-jesgejes)
+
+[Soal 2 - sds](#soal-2---ekspedisi-pesugihan-gunung-kawi---mas-amba)
+
 ## Laporan
 
 ### Soal 1 - ARGO NGAWI JESGEJES
