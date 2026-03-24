@@ -2,6 +2,40 @@
 
 ## Daftar Isi
 
+  - [Daftar Isi](#daftar-isi)
+  - [Laporan](#laporan)
+    - [Soal 1 - ARGO NGAWI JESGEJES](#soal-1---argo-ngawi-jesgejes)
+      - [Overview Program](#overview-program)
+      - [a. Perhitungan total penumpang](#a-perhitungan-total-penumpang)
+      - [b. Perhitungan total gerbong](#b-perhitungan-total-gerbong)
+      - [c. Identifikasi penumpang tertua](#c-identifikasi-penumpang-tertua)
+      - [d. Perhitungan rata-rata umur penumpang](#d-perhitungan-rata-rata-umur-penumpang)
+      - [e. Perhitungan jumlah penumpang business class](#e-perhitungan-jumlah-penumpang-business-class)
+      - [Output](#output)
+        - [a. Perhitungan total penumpang](#a-perhitungan-total-penumpang)
+        - [b. Perhitungan total gerbong](#b-perhitungan-total-gerbong)
+        - [c. Identifikasi penumpang tertua](#c-identifikasi-penumpang-tertua)
+        - [d. Perhitungan rata-rata umur penumpang](#d-perhitungan-rata-rata-umur-penumpang)
+        - [e. Perhitungan jumlah penumpang business class](#e-perhitungan-jumlah-penumpang-business-class)
+    - [Soal 2 - EKSPEDISI PESUGIHAN GUNUNG KAWI - MAS AMBA](#soal-2---ekspedisi-pesugihan-gunung-kawi-mas---amba)
+    - [Soal 3 KOS SLEBEW AMBATUKAM](#soal-3-kos-slebew-ambatukam)
+      - [Overview Program](#overview-program-1)
+      - [1. Fitur Penambah Penghuni](#1-fitur-penambah-penghuni)
+      - [2. Fitur Hapus penghuni](#2-fitur-hapus-penghuni)
+      - [3. Fitur Penampil Database](#3-fitur-penampil-database)
+      - [4. Fitur Update status](#4-fitur-update-status)
+      - [5. Fitur Pencetak Laporan](#5-fitur-pencetak-laporan)
+      - [6. Fitur Cron Job](#6-fitur-cron-job)
+      - [7. Exit Program](#7-exit-program)
+      - [Output](#output-1)
+        - [1. Main Menu](#1-main-menu)
+        - [2. Fitur Penambah Penghuni](#2-fitur-penambah-penghuni)
+        - [3. Fitur Hapus Penghuni](#3-fitur-hapus-penghuni)
+        - [4. Fitur Penampil Database](#4-fitur-penampil-database)
+        - [5. Fitur Update Status](#5-fitur-update-status)
+        - [6. Fitur Pencetak Laporan](#6-fitur-pencetak-laporan)
+        - [7. Fitur Cron Job](#7-fitur-cron-job)
+
 ## Laporan
 
 ### Soal 1 - ARGO NGAWI JESGEJES
