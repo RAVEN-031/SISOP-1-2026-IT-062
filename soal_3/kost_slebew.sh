@@ -253,33 +253,27 @@ do
 	if [[ $input == "1" ]]
 	then
 		add_tenant
-		read -p "Tekan Enter untuk melanjutkan"
 	elif [[ $input == "2" ]]
 	then
 		remove_tenant
-		read -p "Tekan Enter untuk melanjutkan"
 	elif [[ $input == "3" ]]
 	then
 		show_tenant
-		read -p "Tekan Enter untuk melanjutkan"
 	elif [[ $input == "4" ]]
 	then
 		update_tenant
-		read -p "Tekan Enter untuk melanjutkan"
 	elif [[ $input == "5" ]]
 	then
 		report_tenant
-		read -p "Tekan Enter untuk melanjutkan"
 	elif [[ $input == "6" ]]
 	then
 		reminder_shi
-		read -p "Tekan Enter untuk melanjutkan"
 	elif [[ $input == "7" ]]
 	then
 		break
 	else
 		echo "Input salah"
-		read -p "Tekan Enter untuk melanjutkan"
 	fi
+		read -p "Tekan Enter untuk melanjutkan"
 
 done	
