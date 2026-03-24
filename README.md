@@ -35,6 +35,7 @@
         - [5. Fitur Update Status](#5-fitur-update-status)
         - [6. Fitur Pencetak Laporan](#6-fitur-pencetak-laporan)
         - [7. Fitur Cron Job](#7-fitur-cron-job)
+    - [Notes](#notes)
 
 ## Laporan
 
@@ -595,4 +596,8 @@ Opsi 7 akan menghentikan while loop dan menyelesaikan program.
 
 <img width="391" height="202" alt="image" src="https://github.com/user-attachments/assets/b4b5778c-1211-489a-8107-1832b11ee2e7" />
 
+## Notes
 
+Very thankful for this markdown table of contents generator script
+
+<a href="https://github.com/Lirt/markdown-toc-bash/tree/main" target="_blank">markdown-toc-bash</a>
