@@ -6,7 +6,9 @@
 
 ### Soal 1
 
-Program yang dibuat menggunakan while loop untuk memungkinkan pengecekan semua poin soal dengan menjalankan programnya sekali
+#### Overview Program
+
+Program dibuat mengimplementasikan while loop untuk memungkinkan pengecekan semua poin soal dengan menjalankan programnya sekali
 
 ```bash
 while true
@@ -18,7 +20,7 @@ do
 line terakhir menggunakan OR operator dimana jika `read input` diberikan Ctrl+D akan memberikan exit status 1 yang membuat program menjalankanperintah break yang akan 
 menghentikan while loop untuk menyelesaikan program
 
-#### a. Perhitungan total penumpang
+##### a. Perhitungan total penumpang
 
 ```bash
 if [ $input == 'a' ]
@@ -31,7 +33,7 @@ dilakukan dengan menggunakan pattern `NR > 1`
 
 Note: Field separator sebenarnya tidak diperlukan untuk bagian ini
 
-#### b. Perhitungan total gerbong
+##### b. Perhitungan total gerbong
 
 ```bash
 elif [ $input == 'b' ]
@@ -53,7 +55,7 @@ Jika input `b` diberikan, maka program akan menghitung jumlah gerbong dengan car
 
 Perintah ini menghitung jumlah key yang terdapat dalam array `count`
 
-#### c. Identifikasi penumpang tertua
+##### c. Identifikasi penumpang tertua
 
 ```bash
 elif [ $input == 'c' ]
@@ -64,7 +66,7 @@ then
 Jika input `c` diberikan, awk akan mengecek umur tertinggi dan menyimpannya dalam variabel `max` dan menyimpan nama dari umur tersebut dalam variable `name`
 <!-- You could already see my will to write this report fading XD -->
 
-#### d. Perhitungan rata-rata umur penumpang
+##### d. Perhitungan rata-rata umur penumpang
 
 ```bash
 elif [ $input == 'd' ]
@@ -74,7 +76,7 @@ then
 
 Opsi `d` menghitung total umur semua penumpang dan jumlah baris, lalu membagi total umur dengan jumlah baris
 
-#### e. Perhitungan jumlah penumpang business class
+##### e. Perhitungan jumlah penumpang business class
 
 ```bash
 elif [ $input == 'e' ]
@@ -83,3 +85,17 @@ then
 ```
 
 Opsi `e` menggunakan variable `count` untuk menghitung jumlah kolom ke 3 yang memiliki value `Business`
+
+#### Output
+
+OI, DON'T FORGET TO PUT IN THE PICS
+
+##### a. Perhitungan total penumpang
+
+##### b. Perhitungan total gerbong
+
+##### c. Identifikasi penumpang tertua
+
+##### d. Perhitungan rata-rata umur penumpang
+
+##### e. Perhitungan jumlah penumpang business class
