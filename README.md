@@ -35,7 +35,7 @@
         - [5. Fitur Update Status](#5-fitur-update-status)
         - [6. Fitur Pencetak Laporan](#6-fitur-pencetak-laporan)
         - [7. Fitur Cron Job](#7-fitur-cron-job)
-    - [Notes](#notes)
+  - [Notes](#notes)
 
 ## Laporan
 
