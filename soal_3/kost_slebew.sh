@@ -103,8 +103,8 @@ remove_tenant() {
 ===================================="
 	read -p "Nama Penghuni  :" name
 	# Checks if name exists
-	flag=$(awk -v a="name" 'BEGIN {FS=","} $1 == a {print 0;exit} END {print 1}' data/penghuni.csv)
-	if [[ $flag == 1 ]]
+	flag=$(awk -v a="$name" 'BEGIN {FS=","} $1 == a {printf 0;exit} END {printf 1}' data/penghuni.csv)
+	if [[ $flag == "1" ]]
 	then
 		echo "Nama tidak ditemukan"
 		return 0
