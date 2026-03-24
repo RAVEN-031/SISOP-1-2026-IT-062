@@ -526,3 +526,39 @@ Pilihan 4 akan mengembalikan ke menu awal.
 #### 7. Exit Program
 
 Opsi 7 akan menghentikan while loop dan menyelesaikan program.
+
+#### Output
+
+##### 1. Main Menu
+
+<img width="647" height="973" alt="image" src="https://github.com/user-attachments/assets/012eb752-f34b-44b8-85d0-026086a61b8b" />
+
+##### 2. Fitur Penambah Penghuni
+
+<img width="683" height="201" alt="image" src="https://github.com/user-attachments/assets/8098ce74-5e6d-45b0-8d4b-d1d8a5f5aa1f" />
+
+##### 3. Fitur Hapus Penghuni
+
+<img width="897" height="126" alt="image" src="https://github.com/user-attachments/assets/5319fd98-e983-442c-8341-5550f2d63306" />
+
+##### 4. Fitur Penampil Database
+
+<img width="567" height="222" alt="image" src="https://github.com/user-attachments/assets/7ec18700-0c09-4453-be04-5d9bb6d6709e" />
+
+##### 5. Fitur Update Status
+
+<img width="415" height="142" alt="image" src="https://github.com/user-attachments/assets/1a2488de-f26e-4c71-a881-68faf7aaa142" />
+
+##### 6. Fitur Pencetak Laporan
+
+<img width="404" height="212" alt="image" src="https://github.com/user-attachments/assets/ab1b950b-e441-4c48-af30-8425890bccec" />
+
+##### 7. Fitur Cron Job
+
+<img width="943" height="219" alt="image" src="https://github.com/user-attachments/assets/55ced3b1-6d7c-4e67-b8ee-fef9764b384a" />
+
+<img width="407" height="247" alt="image" src="https://github.com/user-attachments/assets/161c1175-364e-483e-a4b6-e1596aaba073" />
+
+<img width="391" height="202" alt="image" src="https://github.com/user-attachments/assets/b4b5778c-1211-489a-8107-1832b11ee2e7" />
+
+
