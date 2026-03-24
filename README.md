@@ -17,7 +17,7 @@
         - [c. Identifikasi penumpang tertua](#c-identifikasi-penumpang-tertua)
         - [d. Perhitungan rata-rata umur penumpang](#d-perhitungan-rata-rata-umur-penumpang)
         - [e. Perhitungan jumlah penumpang business class](#e-perhitungan-jumlah-penumpang-business-class)
-    - [Soal 2 - EKSPEDISI PESUGIHAN GUNUNG KAWI - MAS AMBA](#soal-2---ekspedisi-pesugihan-gunung-kawi-mas---amba)
+    - [Soal 2 - EKSPEDISI PESUGIHAN GUNUNG KAWI - MAS AMBA](#soal-2---ekspedisi-pesugihan-gunung-kawi---mas-amba)
     - [Soal 3 KOS SLEBEW AMBATUKAM](#soal-3-kos-slebew-ambatukam)
       - [Overview Program](#overview-program-1)
       - [1. Fitur Penambah Penghuni](#1-fitur-penambah-penghuni)
