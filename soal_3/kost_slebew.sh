@@ -243,7 +243,7 @@ then
 	tim=$(date +%T)
 	awk -v a="$dat" -v b="$tim" '
 	BEGIN {FS=","}
-	$4 == "Menunggak" {printf "[%s %s] TAGIHAN: %s (%s) - Menunggak Rp. %s\n", a, b, $1, $2, $3}' data/penghuni.csv >> log/tagihan.log
+	$4 == "Menunggak" {printf "[%s %s] TAGIHAN: %s (Kamar %s) - Menunggak Rp. %s\n", a, b, $1, $2, $3}' data/penghuni.csv >> log/tagihan.log
 	exit 0
 fi
 printf "%s" "$banner"
