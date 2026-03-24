@@ -225,8 +225,7 @@ reminder_shi() {
 			echo "Cron Job pengingat berhasil ditambahkan"
 		elif [[ $input == "3" ]]
 		then 
-			crontab -r
-			echo "Cron Job pengingat terhapus"
+			crontab -r 2>/dev/null && echo "Cron Job pengingat terhapus" || echo "Tidak ada Cron Job yang terdaftar"
 		elif [[ $input == "4" ]]
 		then
 			return 0
