@@ -108,7 +108,7 @@ Opsi `e` menggunakan variable `count` untuk menghitung jumlah kolom ke 3 yang me
 ### Soal 2 - EKSPEDISI PESUGIHAN GUNUNG KAWI - MAS AMBA
 
 Instruksi pertama untuk soal ini adalah setup virtual environment dan menginstall tools. Tetapi karena saya ~malas~ merasa itu tidak efisien, saya langsung menggunakan `wget -O peta-ekspedisi-amba.pdf link-here` untuk mendownload file dan menyimpannya sebagai file name yang sesuai secara langsung.
-<!-- Seriously? what the hell is gdown, and why pip? it's available on apt as people -->
+<!-- Seriously? what the hell is gdown, and why pip? it's available on apt as a package -->
 
 <img width="944" height="1023" alt="image" src="https://github.com/user-attachments/assets/ebcd7317-01c6-4c3f-82b4-4a741ec56dc2" />
 
@@ -443,3 +443,86 @@ print "===================================="
 }' data/penghuni.csv > rekap/laporan_bulanan.txt
 cat rekap/laporan_bulanan.txt
 ```
+#### 6. Fitur Cron Job
+
+Untuk fitur ini, saya sudah menyiapkan untuk penggunaan option pada program ini.
+
+Jika program ini dijalankan dengan option `--check-tagihan` maka program akan menambahkan laporan tunggakan ke dalam `tagihan.log` sesuai dengan format yang telah ditentukan.
+
+```bash
+if [[ $1 == "--check-tagihan" ]]
+then
+	dat=$(date +%F)
+	tim=$(date +%T)
+	awk -v a="$dat" -v b="$tim" '
+	BEGIN {FS=","}
+	$4 == "Menunggak" {printf "[%s %s] TAGIHAN: %s (%s) - Menunggak Rp. %s\n", a, b, $1, $2, $3}' data/penghuni.csv >> log/tagihan.log
+	exit 0
+fi
+```
+
+Opsi 6 akan memulai while loop untuk menu cron yang akan meminta input.
+
+```bash
+		echo "
+====================================
+              MENU CRON
+====================================
+1. Lihat Cron Job aktif
+2. Daftar Cron Job pengingat
+3. Hapus  Cron Job pengingat
+4. Kembali
+===================================="	
+		read -p ">> " input
+```
+
+Pilihan 1 akan menunjukkan pengingat yang aktif dan memastikan error message saat tidak ada cron job yang aktif tidak muncul.
+
+```bash
+		if [[ $input == "1" ]]
+		then
+			out=$(crontab -l 2>/dev/null)
+			if [[ $? == 1 ]]
+			then
+				echo "Tidak ada pengingat aktif"
+			else
+				echo "--Daftar Cron Job--"
+				echo "$out"
+			fi
+```
+
+Pilihan 2 akan meminta input untuk jam dan menit untuk pengingat yang baru yang akan dipanggil setiap hari.
+
+```bash
+		elif [[ $input == "2" ]]
+		then
+			read -p "Masukkan Jam (0-23): " hour
+			read -p "Masukkan Menit (0-59): " mins
+			hour=$(($hour % 24))
+			mins=$(($mins % 60))
+			#I'm normalizing this cuz I AM NOT DEALING WITH ANOTHER INPUT SANITATION
+			echo "$mins $hour * * * $(pwd)/kost_slebew.sh --check-tagihan" > ./cron_temp
+			crontab ./cron_temp
+			rm ./cron_temp
+			echo "Cron Job pengingat berhasil ditambahkan"
+```
+
+Pilihan 3 akan menghapus Cron Job yang sudah ada dan memastikan error message tidak muncul saat tidak ada pengingat yang aktif.
+
+```bash
+		elif [[ $input == "3" ]]
+		then 
+			crontab -r 2>/dev/null && echo "Cron Job pengingat terhapus" || echo "Tidak ada Cron Job yang terdaftar"
+```
+
+Pilihan 4 akan mengembalikan ke menu awal.
+
+```bash
+		elif [[ $input == "4" ]]
+		then
+			return 0
+```
+
+#### 7. Exit Program
+
+Opsi 7 akan menghentikan while loop dan menyelesaikan program.
