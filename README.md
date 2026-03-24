@@ -85,17 +85,25 @@ Opsi `e` menggunakan variable `count` untuk menghitung jumlah kolom ke 3 yang me
 
 #### Output
 
-OI, DON'T FORGET TO PUT IN THE PICS
-
 ##### a. Perhitungan total penumpang
+
+<img width="420" height="105" alt="image" src="https://github.com/user-attachments/assets/77881b82-6ab9-4546-ab31-a1a451e8f06f" />
 
 ##### b. Perhitungan total gerbong
 
+<img width="384" height="85" alt="image" src="https://github.com/user-attachments/assets/1aebc5db-e757-4e26-9ea3-506a9bf3fc22" />
+
 ##### c. Identifikasi penumpang tertua
+
+<img width="585" height="71" alt="image" src="https://github.com/user-attachments/assets/631c8a8c-a4ef-492e-b61c-c40501e34d29" />
 
 ##### d. Perhitungan rata-rata umur penumpang
 
+<img width="391" height="84" alt="image" src="https://github.com/user-attachments/assets/b42186f6-b35f-47e4-9589-cb8ead1e4faa" />
+
 ##### e. Perhitungan jumlah penumpang business class
+
+<img width="439" height="83" alt="image" src="https://github.com/user-attachments/assets/7bb4a657-9056-4f3f-9ec7-067f4b476ea6" />
 
 ### Soal 2
 
