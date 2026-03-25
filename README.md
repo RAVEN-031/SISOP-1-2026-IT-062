@@ -140,7 +140,13 @@ Opsi `e` menggunakan variable `count` untuk menghitung jumlah kolom ke 3 yang me
 
 <img width="439" height="83" alt="image" src="https://github.com/user-attachments/assets/7bb4a657-9056-4f3f-9ec7-067f4b476ea6" />
 
+#### Kendala
+
+Syntax dan space sensitivity bash.
+
 ### Soal 2 - EKSPEDISI PESUGIHAN GUNUNG KAWI - MAS AMBA
+
+#### Pengerjaan
 
 Instruksi pertama untuk soal ini adalah setup virtual environment dan menginstall tools. Tetapi karena saya ~malas~ merasa itu tidak efisien, saya langsung menggunakan `wget -O peta-ekspedisi-amba.pdf link-here` untuk mendownload file dan menyimpannya sebagai file name yang sesuai secara langsung.
 <!-- Seriously? what the hell is gdown, and why pip? it's available on apt as a package -->
@@ -216,6 +222,10 @@ echo $y,$x
 Saya menggunakan awk untuk melakukan perhitungan titik tengah lalu sekali lagi menjalankan program tersebut dengan output redirection operator untuk menyimpannya dalam `posisipusaka.txt`.
 
 <img width="393" height="129" alt="image" src="https://github.com/user-attachments/assets/6327ab30-f23f-4028-a7c6-e63ed44e41a0" />
+
+#### Kendala
+
+Tidak ada kendala
 
 ### Soal 3 KOS SLEBEW AMBATUKAM
 
@@ -595,6 +605,13 @@ Opsi 7 akan menghentikan while loop dan menyelesaikan program.
 <img width="407" height="247" alt="image" src="https://github.com/user-attachments/assets/161c1175-364e-483e-a4b6-e1596aaba073" />
 
 <img width="391" height="202" alt="image" src="https://github.com/user-attachments/assets/b4b5778c-1211-489a-8107-1832b11ee2e7" />
+
+#### Kendala
+
+- Soal panjang
+
+<img width="437" height="96" alt="image" src="https://github.com/user-attachments/assets/dcf026f6-a6ef-4949-8b90-79122f1ea1ee" />
+
 
 ## Notes
 
