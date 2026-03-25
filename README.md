@@ -229,7 +229,12 @@ Saya menggunakan awk untuk melakukan perhitungan titik tengah lalu sekali lagi m
 
 #### Kendala
 
-Tidak ada kendala
+Struktur folder dan soal memiliki typo "ekspedsi" yang menyebabkan
+1.	Kebingungan atas penamaan folder.
+2.	Kekesalan karena terdapat typo.
+3.	kelupaan untuk menanyakan perihal tersebut karena poin 1 & 2.
+
+Perintah soal menyuruh setup gdown menggunakan **pip**??????? Dan setup **venv**????. Walaupun gdown terdapat dalam package linux.
 
 ### Soal 3 KOS SLEBEW AMBATUKAM
 
