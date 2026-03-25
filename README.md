@@ -17,7 +17,10 @@
         - [c. Identifikasi penumpang tertua](#c-identifikasi-penumpang-tertua)
         - [d. Perhitungan rata-rata umur penumpang](#d-perhitungan-rata-rata-umur-penumpang)
         - [e. Perhitungan jumlah penumpang business class](#e-perhitungan-jumlah-penumpang-business-class)
+      - [Kendala](#kendala)
     - [Soal 2 - EKSPEDISI PESUGIHAN GUNUNG KAWI - MAS AMBA](#soal-2---ekspedisi-pesugihan-gunung-kawi---mas-amba)
+    	- [Pengerjaan](#pengerjaan)
+    	- [Kendala](#kendala-1)
     - [Soal 3 KOS SLEBEW AMBATUKAM](#soal-3-kos-slebew-ambatukam)
       - [Overview Program](#overview-program-1)
       - [1. Fitur Penambah Penghuni](#1-fitur-penambah-penghuni)
@@ -35,6 +38,7 @@
         - [5. Fitur Update Status](#5-fitur-update-status)
         - [6. Fitur Pencetak Laporan](#6-fitur-pencetak-laporan)
         - [7. Fitur Cron Job](#7-fitur-cron-job)
+      - [Kendala](#kendala-2)
   - [Notes](#notes)
 
 ## Laporan
