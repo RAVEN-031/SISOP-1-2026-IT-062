@@ -1,7 +1,6 @@
-#!/usr/bin/awk -f
-#I wish I could save this file as .awk but saving it as anything else is going to be flagged as cheating...
+#!/usr/bin/bash
 
-BEGIN {
+awk 'BEGIN {
   OFS = ","
 }
 
@@ -26,4 +25,4 @@ END {
   for (i in id) {
     print id[i], site[i], lat[i], long[i]
   }
-}
+}' "gsxtrack.json" > titik-penting.txt

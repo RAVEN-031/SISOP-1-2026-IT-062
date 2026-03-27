@@ -1,11 +1,10 @@
 ====================================
           Laporan Keuangan
 ====================================
-Total Pemasukan (Aktif)   : Rp. 40000
-Total Tunggakan           : Rp. 300020
-Jumlah Kamar Terisi       : 4
+Total Pemasukan (Aktif)   : Rp. 20000
+Total Tunggakan           : Rp. 300000
+Jumlah Kamar Terisi       : 2
 ------------------------------------
 Daftar penghuni menunggak:
 Zee
-M
 ====================================
